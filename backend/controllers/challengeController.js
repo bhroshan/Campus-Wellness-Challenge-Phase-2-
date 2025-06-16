@@ -204,7 +204,7 @@ const getChallenge = asyncHandler(async (req, res) => {
     }
 
     res.json({
-        ...challenge.toObject(),
+        ...challenge?.toObject(),
         joined,
         completed
     });

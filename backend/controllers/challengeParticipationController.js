@@ -19,8 +19,8 @@ const getJoinedChallenges = asyncHandler(async (req, res) => {
 
     // Extract challenges from participations and include completion status
     const challenges = participations.map(p => ({
-        ...p.challenge.toObject(),
-        completed: p.completed
+        ...p?.challenge?.toObject(),
+        completed: p?.completed
     })).filter(challenge => challenge._id); // Filter out any null challenges
 
     res.status(200).json(challenges);
